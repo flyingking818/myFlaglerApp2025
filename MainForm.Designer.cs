@@ -65,6 +65,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.txtPosition = new System.Windows.Forms.TextBox();
+            this.btnDisplayProfile = new System.Windows.Forms.Button();
             this.grpPersonnel.SuspendLayout();
             this.grpBasicInfo.SuspendLayout();
             this.grpProfessor.SuspendLayout();
@@ -436,12 +437,23 @@
             this.txtPosition.Size = new System.Drawing.Size(433, 31);
             this.txtPosition.TabIndex = 8;
             // 
+            // btnDisplayProfile
+            // 
+            this.btnDisplayProfile.Location = new System.Drawing.Point(80, 760);
+            this.btnDisplayProfile.Name = "btnDisplayProfile";
+            this.btnDisplayProfile.Size = new System.Drawing.Size(284, 42);
+            this.btnDisplayProfile.TabIndex = 11;
+            this.btnDisplayProfile.Text = "Display Profile";
+            this.btnDisplayProfile.UseVisualStyleBackColor = true;
+            this.btnDisplayProfile.Click += new System.EventHandler(this.btnDisplayProfile_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(2285, 1259);
+            this.Controls.Add(this.btnDisplayProfile);
             this.Controls.Add(this.grpStaff);
             this.Controls.Add(this.grpStudent);
             this.Controls.Add(this.grpProfessor);
@@ -502,6 +514,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txtPosition;
+        private System.Windows.Forms.Button btnDisplayProfile;
     }
 }
 

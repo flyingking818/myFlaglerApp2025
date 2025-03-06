@@ -17,6 +17,28 @@ namespace myFlaglerApp2025
             InitializeComponent();
         }
 
-       
+        private void btnDisplayProfile_Click(object sender, EventArgs e)
+        {
+            //Validate user inputs
+            if (!ValidateInput()) return;
+        }
+
+        private bool ValidateInput() { 
+            if(string.IsNullOrWhiteSpace(txtName.Text))
+            {
+                txtName.Focus();
+                return ShowError("Name is required!");
+            }
+
+            return true;
+        }
+
+        private bool ShowError(string message) {
+            MessageBox.Show(message,"Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            return false;
+        }
+
+
+
     }
 }
