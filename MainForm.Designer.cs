@@ -40,14 +40,16 @@
             this.txtName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.grpProfessor = new System.Windows.Forms.GroupBox();
+            this.cmbDepartment = new System.Windows.Forms.ComboBox();
+            this.chkTerminalDegree = new System.Windows.Forms.CheckBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtResearchArea = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.chkTerminalDegree = new System.Windows.Forms.CheckBox();
-            this.cmbDepartment = new System.Windows.Forms.ComboBox();
             this.grpStudent = new System.Windows.Forms.GroupBox();
+            this.dtpEnrollmentDate = new System.Windows.Forms.DateTimePicker();
+            this.label10 = new System.Windows.Forms.Label();
             this.cmdMajor = new System.Windows.Forms.ComboBox();
             this.chkFullTime = new System.Windows.Forms.CheckBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -55,22 +57,24 @@
             this.txtGPA = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.dtpEnrollmentDate = new System.Windows.Forms.DateTimePicker();
             this.grpStaff = new System.Windows.Forms.GroupBox();
+            this.txtPosition = new System.Windows.Forms.TextBox();
             this.chkAdministrative = new System.Windows.Forms.CheckBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.txtDivision = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.txtPosition = new System.Windows.Forms.TextBox();
             this.btnDisplayProfile = new System.Windows.Forms.Button();
+            this.lblResult = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnUploadImage = new System.Windows.Forms.Button();
             this.grpPersonnel.SuspendLayout();
             this.grpBasicInfo.SuspendLayout();
             this.grpProfessor.SuspendLayout();
             this.grpStudent.SuspendLayout();
             this.grpStaff.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // grpPersonnel
@@ -197,6 +201,31 @@
             this.grpProfessor.TabStop = false;
             this.grpProfessor.Text = "Professor Information";
             // 
+            // cmbDepartment
+            // 
+            this.cmbDepartment.FormattingEnabled = true;
+            this.cmbDepartment.Items.AddRange(new object[] {
+            "Math and Technology",
+            "Sports Management",
+            "Business Administration",
+            "Fine Arts",
+            "Psychology",
+            "Other"});
+            this.cmbDepartment.Location = new System.Drawing.Point(211, 60);
+            this.cmbDepartment.Name = "cmbDepartment";
+            this.cmbDepartment.Size = new System.Drawing.Size(433, 33);
+            this.cmbDepartment.TabIndex = 7;
+            // 
+            // chkTerminalDegree
+            // 
+            this.chkTerminalDegree.AutoSize = true;
+            this.chkTerminalDegree.Location = new System.Drawing.Point(37, 181);
+            this.chkTerminalDegree.Name = "chkTerminalDegree";
+            this.chkTerminalDegree.Size = new System.Drawing.Size(324, 29);
+            this.chkTerminalDegree.TabIndex = 6;
+            this.chkTerminalDegree.Text = "Terminal Degree (e.g., PhD)?";
+            this.chkTerminalDegree.UseVisualStyleBackColor = true;
+            // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(120, -102);
@@ -237,31 +266,6 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "Department:";
             // 
-            // chkTerminalDegree
-            // 
-            this.chkTerminalDegree.AutoSize = true;
-            this.chkTerminalDegree.Location = new System.Drawing.Point(37, 181);
-            this.chkTerminalDegree.Name = "chkTerminalDegree";
-            this.chkTerminalDegree.Size = new System.Drawing.Size(324, 29);
-            this.chkTerminalDegree.TabIndex = 6;
-            this.chkTerminalDegree.Text = "Terminal Degree (e.g., PhD)?";
-            this.chkTerminalDegree.UseVisualStyleBackColor = true;
-            // 
-            // cmbDepartment
-            // 
-            this.cmbDepartment.FormattingEnabled = true;
-            this.cmbDepartment.Items.AddRange(new object[] {
-            "Math and Technology",
-            "Sports Management",
-            "Business Administration",
-            "Fine Arts",
-            "Psychology",
-            "Other"});
-            this.cmbDepartment.Location = new System.Drawing.Point(211, 60);
-            this.cmbDepartment.Name = "cmbDepartment";
-            this.cmbDepartment.Size = new System.Drawing.Size(433, 33);
-            this.cmbDepartment.TabIndex = 7;
-            // 
             // grpStudent
             // 
             this.grpStudent.Controls.Add(this.dtpEnrollmentDate);
@@ -279,6 +283,23 @@
             this.grpStudent.TabIndex = 8;
             this.grpStudent.TabStop = false;
             this.grpStudent.Text = "Student Information";
+            // 
+            // dtpEnrollmentDate
+            // 
+            this.dtpEnrollmentDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpEnrollmentDate.Location = new System.Drawing.Point(211, 181);
+            this.dtpEnrollmentDate.Name = "dtpEnrollmentDate";
+            this.dtpEnrollmentDate.Size = new System.Drawing.Size(217, 31);
+            this.dtpEnrollmentDate.TabIndex = 9;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(32, 185);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(171, 25);
+            this.label10.TabIndex = 8;
+            this.label10.Text = "Enrollment Date:";
             // 
             // cmdMajor
             // 
@@ -347,23 +368,6 @@
             this.label9.TabIndex = 0;
             this.label9.Text = "Major:";
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(32, 185);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(171, 25);
-            this.label10.TabIndex = 8;
-            this.label10.Text = "Enrollment Date:";
-            // 
-            // dtpEnrollmentDate
-            // 
-            this.dtpEnrollmentDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpEnrollmentDate.Location = new System.Drawing.Point(211, 181);
-            this.dtpEnrollmentDate.Name = "dtpEnrollmentDate";
-            this.dtpEnrollmentDate.Size = new System.Drawing.Size(217, 31);
-            this.dtpEnrollmentDate.TabIndex = 9;
-            // 
             // grpStaff
             // 
             this.grpStaff.Controls.Add(this.txtPosition);
@@ -379,6 +383,13 @@
             this.grpStaff.TabIndex = 10;
             this.grpStaff.TabStop = false;
             this.grpStaff.Text = "Staff Information";
+            // 
+            // txtPosition
+            // 
+            this.txtPosition.Location = new System.Drawing.Point(211, 63);
+            this.txtPosition.Name = "txtPosition";
+            this.txtPosition.Size = new System.Drawing.Size(433, 31);
+            this.txtPosition.TabIndex = 8;
             // 
             // chkAdministrative
             // 
@@ -430,13 +441,6 @@
             this.label14.TabIndex = 0;
             this.label14.Text = "Position:";
             // 
-            // txtPosition
-            // 
-            this.txtPosition.Location = new System.Drawing.Point(211, 63);
-            this.txtPosition.Name = "txtPosition";
-            this.txtPosition.Size = new System.Drawing.Size(433, 31);
-            this.txtPosition.TabIndex = 8;
-            // 
             // btnDisplayProfile
             // 
             this.btnDisplayProfile.Location = new System.Drawing.Point(80, 760);
@@ -447,12 +451,42 @@
             this.btnDisplayProfile.UseVisualStyleBackColor = true;
             this.btnDisplayProfile.Click += new System.EventHandler(this.btnDisplayProfile_Click);
             // 
+            // lblResult
+            // 
+            this.lblResult.AutoSize = true;
+            this.lblResult.Location = new System.Drawing.Point(429, 769);
+            this.lblResult.Name = "lblResult";
+            this.lblResult.Size = new System.Drawing.Size(82, 25);
+            this.lblResult.TabIndex = 12;
+            this.lblResult.Text = "label11";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(816, 27);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(405, 385);
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnUploadImage
+            // 
+            this.btnUploadImage.Location = new System.Drawing.Point(1311, 323);
+            this.btnUploadImage.Name = "btnUploadImage";
+            this.btnUploadImage.Size = new System.Drawing.Size(244, 74);
+            this.btnUploadImage.TabIndex = 14;
+            this.btnUploadImage.Text = "Upload Image";
+            this.btnUploadImage.UseVisualStyleBackColor = true;
+            this.btnUploadImage.Click += new System.EventHandler(this.btnUploadImage_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(2285, 1259);
+            this.Controls.Add(this.btnUploadImage);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.lblResult);
             this.Controls.Add(this.btnDisplayProfile);
             this.Controls.Add(this.grpStaff);
             this.Controls.Add(this.grpStudent);
@@ -471,7 +505,9 @@
             this.grpStudent.PerformLayout();
             this.grpStaff.ResumeLayout(false);
             this.grpStaff.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -515,6 +551,9 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txtPosition;
         private System.Windows.Forms.Button btnDisplayProfile;
+        private System.Windows.Forms.Label lblResult;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnUploadImage;
     }
 }
 
