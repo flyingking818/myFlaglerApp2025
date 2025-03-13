@@ -67,14 +67,17 @@
             this.label14 = new System.Windows.Forms.Label();
             this.btnDisplayProfile = new System.Windows.Forms.Button();
             this.lblResult = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picProfile = new System.Windows.Forms.PictureBox();
             this.btnUploadImage = new System.Windows.Forms.Button();
+            this.dgvPeople = new System.Windows.Forms.DataGridView();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.grpPersonnel.SuspendLayout();
             this.grpBasicInfo.SuspendLayout();
             this.grpProfessor.SuspendLayout();
             this.grpStudent.SuspendLayout();
             this.grpStaff.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picProfile)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPeople)).BeginInit();
             this.SuspendLayout();
             // 
             // grpPersonnel
@@ -460,13 +463,13 @@
             this.lblResult.TabIndex = 12;
             this.lblResult.Text = "label11";
             // 
-            // pictureBox1
+            // picProfile
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(816, 27);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(405, 385);
-            this.pictureBox1.TabIndex = 13;
-            this.pictureBox1.TabStop = false;
+            this.picProfile.Location = new System.Drawing.Point(816, 27);
+            this.picProfile.Name = "picProfile";
+            this.picProfile.Size = new System.Drawing.Size(405, 385);
+            this.picProfile.TabIndex = 13;
+            this.picProfile.TabStop = false;
             // 
             // btnUploadImage
             // 
@@ -478,14 +481,36 @@
             this.btnUploadImage.UseVisualStyleBackColor = true;
             this.btnUploadImage.Click += new System.EventHandler(this.btnUploadImage_Click);
             // 
+            // dgvPeople
+            // 
+            this.dgvPeople.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPeople.Location = new System.Drawing.Point(80, 823);
+            this.dgvPeople.Name = "dgvPeople";
+            this.dgvPeople.RowHeadersWidth = 82;
+            this.dgvPeople.RowTemplate.Height = 33;
+            this.dgvPeople.Size = new System.Drawing.Size(2162, 424);
+            this.dgvPeople.TabIndex = 15;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(1687, 758);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(199, 43);
+            this.btnAdd.TabIndex = 16;
+            this.btnAdd.Text = "Add Profile";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(2285, 1259);
+            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.dgvPeople);
             this.Controls.Add(this.btnUploadImage);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.picProfile);
             this.Controls.Add(this.lblResult);
             this.Controls.Add(this.btnDisplayProfile);
             this.Controls.Add(this.grpStaff);
@@ -505,7 +530,8 @@
             this.grpStudent.PerformLayout();
             this.grpStaff.ResumeLayout(false);
             this.grpStaff.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picProfile)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPeople)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -552,8 +578,10 @@
         private System.Windows.Forms.TextBox txtPosition;
         private System.Windows.Forms.Button btnDisplayProfile;
         private System.Windows.Forms.Label lblResult;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picProfile;
         private System.Windows.Forms.Button btnUploadImage;
+        private System.Windows.Forms.DataGridView dgvPeople;
+        private System.Windows.Forms.Button btnAdd;
     }
 }
 

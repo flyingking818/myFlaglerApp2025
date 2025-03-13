@@ -12,10 +12,47 @@ namespace myFlaglerApp2025
 {
     public partial class MainForm : Form
     {
+        //Variable declarations:
+        private string selectedImagePath="";
+
+
         public MainForm()
         {
             InitializeComponent();
+            InitializeDataGridView();
+
+            //Intitialize the person radio buttons
+            rdoProfessor.CheckedChanged += PersonTypeChanged;
+            rdoStudent.CheckedChanged += PersonTypeChanged;
+            rdoStaff.CheckedChanged += PersonTypeChanged;
         }
+
+        private void InitializeDataGridView()
+        {
+            dgvPeople.Columns.Clear();
+            dgvPeople.Columns.Add("Type", "Person Type");
+            dgvPeople.Columns.Add("Name", "Name");
+            dgvPeople.Columns.Add("ID", "ID");
+            dgvPeople.Columns.Add("Details", "Details");
+        }
+
+        private void PersonTypeChanged (object sender, EventArgs e)
+        {
+            //Show the group based on the user's selection
+            grpProfessor.Visible = rdoProfessor.Checked;
+            grpStudent.Visible = rdoStudent.Checked;
+            grpStaff.Visible = rdoStaff.Checked;
+
+            //alternative use the if statement
+            /*
+            if (rdoProfessor.Checked)
+            {
+                grpProfessor.Visible = true;
+            }
+            */
+
+        }
+
 
         private void btnDisplayProfile_Click(object sender, EventArgs e)
         {
@@ -117,6 +154,19 @@ namespace myFlaglerApp2025
         }
 
         private void btnUploadImage_Click(object sender, EventArgs e)
+        {
+            using (var ofd = new OpenFileDialog()) {
+                ofd.Filter = "Image Files|*.jpg;*.png;*.gif;*.jpeg";
+                if(ofd.ShowDialog() == DialogResult.OK)
+                {
+                    selectedImagePath = ofd.FileName;
+                    picProfile.Image = Image.FromFile(selectedImagePath);
+                    picProfile.SizeMode = PictureBoxSizeMode.Zoom;
+                }            
+            }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
         {
 
         }
