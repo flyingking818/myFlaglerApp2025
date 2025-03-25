@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,7 @@ namespace myFlaglerApp2025
         //Variable declarations:
         private string selectedImagePath="";
 
+        private List<Person> people = new List<Person>();
 
         public MainForm()
         {
@@ -25,6 +27,9 @@ namespace myFlaglerApp2025
             rdoProfessor.CheckedChanged += PersonTypeChanged;
             rdoStudent.CheckedChanged += PersonTypeChanged;
             rdoStaff.CheckedChanged += PersonTypeChanged;
+
+            //Our own connections (this alternative is better)
+            // txtName.MouseHover += txtName_MouseHover;
         }
 
         private void InitializeDataGridView()
@@ -33,7 +38,7 @@ namespace myFlaglerApp2025
             dgvPeople.Columns.Add("Type", "Person Type");
             dgvPeople.Columns.Add("Name", "Name");
             dgvPeople.Columns.Add("ID", "ID");
-            dgvPeople.Columns.Add("Details", "Details");
+            dgvPeople.Columns.Add("Details", "Details")
         }
 
         private void PersonTypeChanged (object sender, EventArgs e)
@@ -168,7 +173,83 @@ namespace myFlaglerApp2025
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            if (!ValidateInput()) return;
 
+            try
+            {
+                Person person = CreatePerson();
+                if (person == null) return;
+
+                //Set the image to the Image property, convert the physical image into bytes[]
+                if (!string.IsNullOrEmpty(selectedImagePath)) { 
+                    person.ProfileImage = File.ReadAllBytes(selectedImagePath);
+                }
+
+                //Add the person object into the people list
+                people.Add(person);
+
+                //Display the people in the data view grid (table)
+                UpdateDisplay();
+
+                //ClearForm;
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+        }
+
+        private void UpdateDisplay()
+        {
+            dgvPeople.Rows.Clear(); // Clear existing rows
+
+            foreach (var person in people)
+            {
+                // Create a new row
+                DataGridViewRow row = new DataGridViewRow();
+                row.CreateCells(dgvPeople);
+
+                // Populate the row with data
+                row.Cells[0].Value = person.GetType().Name; // Type (Student, Professor, Staff)
+                row.Cells[1].Value = person.Name; // Name
+                row.Cells[2].Value = person.ID; // ID
+                row.Cells[3].Value = person.GetDetails(); // Details
+
+                // Handle the image column
+                if (person.ProfileImage != null && person.ProfileImage.Length > 0)
+                {
+                    // Convert byte[] to Image
+                    using (var ms = new MemoryStream(person.ProfileImage))
+                    {
+                        Image image = Image.FromStream(ms); // Create the Image object
+                        row.Cells[4].Value = image; // Assign the Image to the cell
+                    }
+                }
+                else
+                {
+                    row.Cells[4].Value = null; // No image
+                }
+            }
+
+        }
+
+       
+
+        private void txtName_MouseHover(object sender, EventArgs e)
+        {
+            txtName.BackColor = Color.Yellow;
+        }
+
+        private void txtName_MouseLeave(object sender, EventArgs e)
+        {
+            txtName.BackColor = Color.White;
+        }
+
+        private void txtName_Enter(object sender, EventArgs e)  //it captures both mouse click in and tab in.
+        {
+            lblResult.Text = "";
         }
     }
 }

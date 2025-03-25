@@ -178,6 +178,9 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(433, 31);
             this.txtName.TabIndex = 1;
+            this.txtName.Enter += new System.EventHandler(this.txtName_Enter);
+            this.txtName.MouseLeave += new System.EventHandler(this.txtName_MouseLeave);
+            this.txtName.MouseHover += new System.EventHandler(this.txtName_MouseHover);
             // 
             // label1
             // 
