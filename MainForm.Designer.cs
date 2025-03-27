@@ -71,6 +71,7 @@
             this.btnUploadImage = new System.Windows.Forms.Button();
             this.dgvPeople = new System.Windows.Forms.DataGridView();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.btnViewDetail = new System.Windows.Forms.Button();
             this.grpPersonnel.SuspendLayout();
             this.grpBasicInfo.SuspendLayout();
             this.grpProfessor.SuspendLayout();
@@ -504,12 +505,23 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // btnViewDetail
+            // 
+            this.btnViewDetail.Location = new System.Drawing.Point(1952, 758);
+            this.btnViewDetail.Name = "btnViewDetail";
+            this.btnViewDetail.Size = new System.Drawing.Size(199, 43);
+            this.btnViewDetail.TabIndex = 17;
+            this.btnViewDetail.Text = "View Profile Detail";
+            this.btnViewDetail.UseVisualStyleBackColor = true;
+            this.btnViewDetail.Click += new System.EventHandler(this.btnViewDetail_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(2285, 1259);
+            this.Controls.Add(this.btnViewDetail);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dgvPeople);
             this.Controls.Add(this.btnUploadImage);
@@ -585,6 +597,7 @@
         private System.Windows.Forms.Button btnUploadImage;
         private System.Windows.Forms.DataGridView dgvPeople;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnViewDetail;
     }
 }
 

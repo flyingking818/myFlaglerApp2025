@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace myFlaglerApp2025
 {
-    public partial class MainForm : Form
+    public partial class MainForm : BaseForm
     {
         //Variable declarations:
         private string selectedImagePath="";
@@ -38,7 +38,23 @@ namespace myFlaglerApp2025
             dgvPeople.Columns.Add("Type", "Person Type");
             dgvPeople.Columns.Add("Name", "Name");
             dgvPeople.Columns.Add("ID", "ID");
-            dgvPeople.Columns.Add("Details", "Details")
+            dgvPeople.Columns.Add("Details", "Details");
+
+            //don't forget to add the image column
+            var imageColumn = new DataGridViewImageColumn();
+            imageColumn.Name = "Image";  //ID
+            imageColumn.HeaderText = "Profile Image"; //Display text 
+            imageColumn.ImageLayout = DataGridViewImageCellLayout.Zoom; //Scales automatically
+            dgvPeople.Columns.Add(imageColumn);
+
+            //Set the widths of the columns based on the data fields.
+            dgvPeople.Columns["Type"].Width = 220;
+            dgvPeople.Columns["Name"].Width = 300;
+            dgvPeople.Columns["ID"].Width = 200;
+            dgvPeople.Columns["Details"].Width = 800;
+            dgvPeople.Columns["Details"].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+            dgvPeople.Columns["Image"].Width = 300;
+
         }
 
         private void PersonTypeChanged (object sender, EventArgs e)
@@ -231,6 +247,11 @@ namespace myFlaglerApp2025
                 {
                     row.Cells[4].Value = null; // No image
                 }
+
+                row.Height = 70;
+
+                //Don't forget to add the row the grid
+                dgvPeople.Rows.Add(row);
             }
 
         }
@@ -250,6 +271,20 @@ namespace myFlaglerApp2025
         private void txtName_Enter(object sender, EventArgs e)  //it captures both mouse click in and tab in.
         {
             lblResult.Text = "";
+        }
+
+        private void btnViewDetail_Click(object sender, EventArgs e)
+        {
+            //Close the current form
+            this.Hide();
+
+            //Instantiate the secondary form
+            // ProfileDetailForm frmDetail = new ProfileDetailForm(personObj); pass the person obj to the secondary form
+            ProfileDetailForm frmDetail = new ProfileDetailForm();
+
+            //Show the new form
+            frmDetail.Show();
+
         }
     }
 }
