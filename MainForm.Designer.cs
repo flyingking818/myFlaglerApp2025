@@ -86,7 +86,7 @@
             this.grpPersonnel.Controls.Add(this.rdoStaff);
             this.grpPersonnel.Controls.Add(this.rdoStudent);
             this.grpPersonnel.Controls.Add(this.rdoProfessor);
-            this.grpPersonnel.Location = new System.Drawing.Point(48, 36);
+            this.grpPersonnel.Location = new System.Drawing.Point(80, 53);
             this.grpPersonnel.Name = "grpPersonnel";
             this.grpPersonnel.Size = new System.Drawing.Size(585, 111);
             this.grpPersonnel.TabIndex = 0;
@@ -134,7 +134,7 @@
             this.grpBasicInfo.Controls.Add(this.label2);
             this.grpBasicInfo.Controls.Add(this.txtName);
             this.grpBasicInfo.Controls.Add(this.label1);
-            this.grpBasicInfo.Location = new System.Drawing.Point(80, 170);
+            this.grpBasicInfo.Location = new System.Drawing.Point(80, 196);
             this.grpBasicInfo.Name = "grpBasicInfo";
             this.grpBasicInfo.Size = new System.Drawing.Size(704, 242);
             this.grpBasicInfo.TabIndex = 1;
@@ -469,7 +469,7 @@
             // 
             // picProfile
             // 
-            this.picProfile.Location = new System.Drawing.Point(816, 27);
+            this.picProfile.Location = new System.Drawing.Point(836, 53);
             this.picProfile.Name = "picProfile";
             this.picProfile.Size = new System.Drawing.Size(405, 385);
             this.picProfile.TabIndex = 13;

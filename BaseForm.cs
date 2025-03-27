@@ -19,7 +19,13 @@ namespace myFlaglerApp2025
 
         private void uploadImageToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //You may call any events on a specific form.
+            UploadImage_Click(sender, e); // Call the overridable method
+        }
+
+        //This is the overriable method, which will be implemented by the MainForm
+        protected virtual void UploadImage_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Upload image not available in this form.");
         }
     }
 }

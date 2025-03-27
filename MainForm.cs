@@ -32,6 +32,11 @@ namespace myFlaglerApp2025
             // txtName.MouseHover += txtName_MouseHover;
         }
 
+        protected override void UploadImage_Click(object sender, EventArgs e)
+        {
+            btnUploadImage.PerformClick(); // This triggers your button
+        }
+
         private void InitializeDataGridView()
         {
             dgvPeople.Columns.Clear();
